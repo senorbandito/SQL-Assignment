@@ -55,15 +55,15 @@ FROM users u JOIN progress p
 ON  u.user_id = p.user_id)
 SELECT city, 
 COUNT(CASE 
-    WHEN learn_cpp IN ('started', 'completed') THEN 1 END ) AS 'CPP',
+    WHEN learn_cpp IN ('started', 'completed') THEN 1 END ) AS 'Students taking CPP',
     COUNT(CASE 
-    WHEN learn_sql IN ('started', 'completed') THEN 1 END) AS 'SQL',
+    WHEN learn_sql IN ('started', 'completed') THEN 1 END) AS 'Students taking SQL',
     COUNT(CASE 
-    WHEN learn_html IN ('started', 'completed') THEN 1 END) AS 'HTML',
+    WHEN learn_html IN ('started', 'completed') THEN 1 END) AS 'Students taking HTML',
     COUNT(CASE 
-    WHEN learn_javascript IN ('started', 'completed') THEN 1 END) AS 'JAVASCRIPT',
+    WHEN learn_javascript IN ('started', 'completed') THEN 1 END) AS 'Students taking Javascript',
     COUNT(CASE 
-    WHEN learn_java IN ('started', 'completed') THEN 1 END) AS 'JAVA'
+    WHEN learn_java IN ('started', 'completed') THEN 1 END) AS 'Students taking Java'
 FROM temporaryTable
 WHERE city IN ('New York', 'Chicago')
 GROUP BY city;
